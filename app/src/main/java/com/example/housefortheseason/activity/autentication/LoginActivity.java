@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
 
             return insets;
         });
-
     }
 
     private void configCliques() {
@@ -67,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
             edit_email.requestFocus();
             edit_email.setError("Digite seu e-mail");
         }
-
     }
 
     private void logar(String email, String senha) {

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#18181B"
     tools:context=".activity.autentication.RecuperarContaActivity">
 
     <include
@@ -51,7 +51,7 @@
         android:onClick="validaDados"
         android:text="Recuperar Senha"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
