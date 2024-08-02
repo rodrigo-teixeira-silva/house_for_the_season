@@ -25,7 +25,7 @@ public class CriarContaActivity extends AppCompatActivity {
     private EditText edit_email;
     private EditText edit_telefone;
     private EditText edit_senha;
-    private ProgressBar progressBar;
+    private ProgressBar progressBar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class CriarContaActivity extends AppCompatActivity {
                 if (!telefone.isEmpty()) {
                     if (!senha.isEmpty()) {
 
-                        //progressBar.setVisibility(View.VISIBLE);
+                        progressBar2.setVisibility(View.VISIBLE);
 
                         Usuario usuario = new Usuario();
                         usuario.setNome(nome);
@@ -111,6 +111,7 @@ public class CriarContaActivity extends AppCompatActivity {
         edit_email = findViewById(R.id.edit_email);
         edit_telefone = findViewById(R.id.edit_telefone);
         edit_senha = findViewById(R.id.edit_senha);
+        progressBar2 = findViewById(R.id.progressBar2);
 
         TextView text_titulo = findViewById(R.id.text_titulo);
         text_titulo.setText("Criar conta");

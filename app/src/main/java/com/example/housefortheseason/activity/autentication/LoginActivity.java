@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edit_email;
     private EditText edit_senha;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if (!email.isEmpty()) {
             if (!senha.isEmpty()) {
-                progressBar.setVisibility(View.VISIBLE);
 
+                progressBar.setVisibility(View.VISIBLE);
 
                 logar(email, senha);
             } else {
