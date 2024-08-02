@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "857335212052",
-    "project_id": "house-for-the-season",
-    "storage_bucket": "house-for-the-season.appspot.com"
+    "project_number": "501402613973",
+    "project_id": "house-for-the-season-f4a9f",
+    "storage_bucket": "house-for-the-season-f4a9f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:857335212052:android:74ad4d1411339b7c4f9f01",
+        "mobilesdk_app_id": "1:501402613973:android:31baf35c1a5f5cd339ca5c",
         "android_client_info": {
           "package_name": "com.example.housefortheseason"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCcKUGl5nDgTPeHaQvZhkgAHyR3vlDRdT8"
+          "current_key": "AIzaSyANnVKRunVVT5NwVqpP7y1T5z62-5S8XeY"
         }
       ],
       "services": {

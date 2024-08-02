@@ -40,36 +40,40 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/edit_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_edit"
                     android:hint="Nome"
                     android:padding="16dp"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/black" />
 
 
                 <EditText
+                    android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_edit"
                     android:hint="E-mail"
                     android:padding="16dp"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/edit_telefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_edit"
                     android:hint="Telefone"
+                    android:inputType="number"
+
                     android:padding="16dp"
-
-                    android:textColor="@color/white" />
-
+                    android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/edit_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -84,8 +88,18 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_btn"
                     android:text="Cadastrar"
+                    android:onClick="validaDados"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    tools:visibility="invisible"
+                    android:indeterminateTint="@color/azul_padrao"/>
 
 
             </LinearLayout>
