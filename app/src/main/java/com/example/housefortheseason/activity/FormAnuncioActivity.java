@@ -3,6 +3,8 @@ package com.example.housefortheseason.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,6 +27,7 @@ import com.example.housefortheseason.model.Produto;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
 
+import java.io.IOException;
 import java.util.List;
 
 public class FormAnuncioActivity extends AppCompatActivity {
@@ -151,6 +155,35 @@ public class FormAnuncioActivity extends AppCompatActivity {
         edit_banheiro = findViewById(R.id.edit_banheiro);
         edit_garagem = findViewById(R.id.edit_garagem);
         cb_status = findViewById(R.id.cb_status);
+        img_anuncio = findViewById(R.id.img_anuncio);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_GALERIA) {
+                Uri localImageSelecionada = data.getData();
+                caminhoImagem = localImageSelecionada.toString();
+
+                if (Build.VERSION.SDK_INT < 28){
+                    try {
+                        imagem = MediaStore.Images.Media.getBitmap(getBaseContext().getContentResolver(), localImageSelecionada);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }else{
+                    ImageDecoder.Source source = ImageDecoder.createSource(getBaseContext().getContentResolver(), localImageSelecionada);
+                    try {
+                        imagem = ImageDecoder.decodeBitmap(source);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                img_anuncio.setImageBitmap(imagem);
+            }
+        }
     }
 }

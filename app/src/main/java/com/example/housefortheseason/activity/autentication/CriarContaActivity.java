@@ -84,9 +84,7 @@ public class CriarContaActivity extends AppCompatActivity {
     }
 
     private void cadastrarUsuario(Usuario usuario) {
-        FirebaseHelper.getAuth().createUserWithEmailAndPassword(
-                usuario.getEmail(), usuario.getSenha()
-        ).addOnCompleteListener(task -> {
+        FirebaseHelper.getAuth().createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 String idUser = task.getResult().getUser().getUid();
                 usuario.setId(idUser);
@@ -117,4 +115,5 @@ public class CriarContaActivity extends AppCompatActivity {
         text_titulo.setText("Criar conta");
 
     }
+
 }
