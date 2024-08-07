@@ -51,4 +51,6 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 
+    implementation("io.github.ParkSangGwon:tedpermission-normal:3.3.0")
+
 }
