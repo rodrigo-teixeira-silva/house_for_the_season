@@ -189,6 +189,16 @@
                 android:text="Disponivel"
                 android:textColor="@color/white" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="invisible"
+                android:layout_gravity="center_horizontal"
+                android:indeterminateTint="@color/verde_padrão" />
+
+
         </LinearLayout>
 
     </ScrollView>
