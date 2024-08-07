@@ -35,10 +35,12 @@
                 android:layout_height="140dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
+                android:onClick="verificaPermiassaoGaleria"
                 android:backgroundTint="@color/verde_padrão"
                 app:cardCornerRadius="5dp">
 
                 <ImageView
+                    android:id="@+id/img_anuncio"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"

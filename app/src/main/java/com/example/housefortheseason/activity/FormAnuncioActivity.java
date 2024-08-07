@@ -1,9 +1,17 @@
 package com.example.housefortheseason.activity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +21,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.housefortheseason.R;
 import com.example.housefortheseason.model.Produto;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.normal.TedPermission;
+
+import java.util.List;
 
 public class FormAnuncioActivity extends AppCompatActivity {
+
+    private static final int REQUEST_GALERIA = 100;
 
     private EditText edit_titulo;
     private EditText edit_descricao;
@@ -23,6 +37,9 @@ public class FormAnuncioActivity extends AppCompatActivity {
     private EditText edit_garagem;
     private CheckBox cb_status;
 
+    private ImageView img_anuncio;
+    private String caminhoImagem;
+    private Bitmap imagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +56,45 @@ public class FormAnuncioActivity extends AppCompatActivity {
 
             return insets;
         });
-
     }
 
-    private void configCliques(){
+    public void verificaPermiassaoGaleria(View view) {
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                abrirGaleria();
+            }
+
+            @Override
+            public void onPermissionDenied(List<String> deniedPermissions) {
+                Toast.makeText(FormAnuncioActivity.this, "Permissão negada, e preciso permitir para poder continuar", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        if (Integer.parseInt(Build.VERSION.RELEASE) < 13) {
+            showDialogPermissaoGaleria(permissionListener, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE});
+        } else {
+            showDialogPermissaoGaleria(permissionListener, new String[]{Manifest.permission.READ_MEDIA_IMAGES});
+        }
+    }
+
+    private void showDialogPermissaoGaleria(PermissionListener listener, String[] permissoes) {
+        TedPermission.create()
+                .setPermissionListener(listener)
+                .setDeniedTitle("Permissão negada.")
+                .setDeniedMessage("Você negou as permissões para acessar a galeria do dispositivo, deseja permitir?")
+                .setDeniedCloseButtonText("Não")
+                .setGotoSettingButtonText("Sim")
+                .setPermissions(permissoes)
+                .check();
+    }
+
+    private void abrirGaleria() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, REQUEST_GALERIA);
+    }
+
+    private void configCliques() {
         findViewById(R.id.ib_salvar).setOnClickListener(view -> validaDados());
     }
 
