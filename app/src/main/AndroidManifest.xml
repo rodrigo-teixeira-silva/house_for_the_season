@@ -13,6 +13,15 @@
         android:theme="@style/Theme.HouseForTheSeason"
         tools:targetApi="31">
         <activity
+            android:name=".activity.FormAnuncioActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.autentication.RecuperarContaActivity"
             android:exported="false" />
         <activity
@@ -21,11 +30,7 @@
         <activity
             android:name=".activity.autentication.LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainActivity"

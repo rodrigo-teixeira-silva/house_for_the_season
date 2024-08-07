@@ -69,6 +69,7 @@ public class RecuperarContaActivity extends AppCompatActivity {
                 Toast.makeText(this, erro, Toast.LENGTH_SHORT).show();
             }
         });
+        progressBar1.setVisibility(View.GONE);
     }
 
     private void configCliques() {
