@@ -53,4 +53,6 @@ dependencies {
 
     implementation("io.github.ParkSangGwon:tedpermission-normal:3.3.0")
 
+    implementation ("com.squareup.picasso:picasso:2.8")
+
 }
