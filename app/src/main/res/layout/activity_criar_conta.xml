@@ -49,7 +49,7 @@
                     android:hint="Nome"
                     android:textColorHint="@android:color/white"
                     android:padding="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
 
                 <EditText
@@ -61,7 +61,7 @@
                     android:hint="E-mail"
                     android:textColorHint="@android:color/white"
                     android:padding="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/edit_telefone"
@@ -74,7 +74,7 @@
                     android:inputType="number"
 
                     android:padding="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:id="@+id/edit_senha"
@@ -85,6 +85,7 @@
                     android:hint="Senha"
                     android:textColorHint="@android:color/white"
                     android:inputType="textPassword"
+                    android:textColor="@color/white"
                     android:padding="16dp" />
 
                 <android.widget.Button

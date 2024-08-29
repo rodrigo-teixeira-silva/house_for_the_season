@@ -29,7 +29,7 @@
 
         <activity
             android:name=".activity.FormAnuncioActivity"
-            android:exported="true" />
+            android:exported="false" />
         <!--            <intent-filter>-->
         <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -46,7 +46,13 @@
 
         <activity
             android:name=".activity.autentication.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+                    </activity>
 
         <activity
             android:name=".activity.MainActivity"
