@@ -3,8 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="#18181B"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MeusAnunciosActivity">
 
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar_voltar_add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_anuncios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3"
+        app:layout_constraintVertical_bias="0.75"
+        tools:listitem="@layout/item_anuncio" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carregando anúncios..."
+        app:layout_constraintBottom_toBottomOf="@+id/rv_anuncios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/verde_padrão"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="296dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

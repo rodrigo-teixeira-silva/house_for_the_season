@@ -1,7 +1,5 @@
 package com.example.housefortheseason.adapter;
 
-import static android.os.Build.VERSION_CODES.R;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.housefortheseason.R;
 import com.example.housefortheseason.model.Anuncio;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class adapterAnuncios  extends RecyclerView.Adapter<adapterAnuncios.MyViewHolder> {
+public class AdapterAnuncios extends RecyclerView.Adapter<AdapterAnuncios.MyViewHolder> {
 
     private List<Anuncio> anuncioList;
 
-    public adapterAnuncios(List<Anuncio> anuncioList) {
+    public AdapterAnuncios(List<Anuncio> anuncioList) {
         this.anuncioList = anuncioList;
     }
 
